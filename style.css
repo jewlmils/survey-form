@@ -1,0 +1,141 @@
+
+*{
+    line-height: 1.5;
+     margin: 0;
+     padding: 0;
+     font-family: 'Montserrat', sans-serif;
+     
+ }
+ 
+ body{
+     font-weight: 500;
+     appearance: none;
+ }
+ 
+ /* text */
+ 
+ h1{
+     font-size: 2.25rem;
+     font-weight: 700;
+ }
+ 
+ #title{
+     font-size: 1.5rem;
+     font-weight: 700;  
+ }
+ 
+ /*  content */
+ .split-screen {
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ .left{
+     height: 200px;
+     background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('movie.jpg');
+     background-size: cover;
+     background-repeat: no-repeat;
+ }
+ 
+ .left, .right{
+     display: flex; 
+     justify-content: center;
+     align-items: center;
+ }
+ 
+ .left .screen{
+     color: white;
+     text-align: center;
+ }
+ 
+ .left p{
+     font-weight: 400;
+ }
+ 
+ .right{
+     display: grid;
+     place-items: center;
+ }
+ 
+ .right .screen{
+     color: black;
+     text-align: center;
+ }
+ 
+ 
+ .right form{
+     width: 500px;
+ }
+ 
+ .screen{
+     margin-bottom: 30px;
+ }
+ 
+ #name,
+ #email,
+ #number,
+ #dropdown,
+ #comments,
+ textarea {
+     display: block;
+     width: 100%;
+     box-sizing: border-box;
+     border-radius: 80px;
+     border: 1px solid #c4c4c4;
+     padding: 1em;
+     margin-bottom: 1.25rem;
+     font-size: 0.875rem;
+ }
+ 
+ #comments{
+     width: 100%;
+     padding: 8px 10px;
+     border-radius: 5px;
+     border: 1.2px solid #c4c4c4;
+     margin-top: 5px;
+     resize: none;
+ }
+ 
+ .input-splitter{
+     display: grid;
+     grid-template-columns: repeat(2, minmax(0px, 1fr));
+     gap: 10px;
+     margin-bottom: 10px;
+ }
+ 
+ .row{
+     display: flex;
+     flex-direction: column;
+     
+ }
+ 
+ #submit {
+     display: block;
+     width: 100%;
+     background: #0096c7;
+     color: white;
+     font-weight: 700;
+     border: none;
+     padding: 1rem;
+     border-radius: 0.75rem;
+     text-transform: uppercase;
+     letter-spacing: 0.5px;
+ }
+ 
+ #submit:hover {
+     background: #00b4d8;
+     cursor: pointer;
+ }
+ 
+ @media  screen and (min-width: 900px) {
+     .split-screen {
+         flex-direction: row;
+         height: 100vh;
+     }
+     .left,
+     .right {
+         display: flex;
+         width: 50%;
+         height: auto;
+     }
+ }
