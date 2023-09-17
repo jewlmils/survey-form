@@ -1,141 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
 
-*{
-    line-height: 1.5;
-     margin: 0;
-     padding: 0;
-     font-family: 'Montserrat', sans-serif;
-     
- }
- 
- body{
-     font-weight: 500;
-     appearance: none;
- }
- 
- /* text */
- 
- h1{
-     font-size: 2.25rem;
-     font-weight: 700;
- }
- 
- #title{
-     font-size: 1.5rem;
-     font-weight: 700;  
- }
- 
- /*  content */
- .split-screen {
-     display: flex;
-     flex-direction: column;
- }
- 
- .left{
-     height: 200px;
-     background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url('movie.jpg');
-     background-size: cover;
-     background-repeat: no-repeat;
- }
- 
- .left, .right{
-     display: flex; 
-     justify-content: center;
-     align-items: center;
- }
- 
- .left .screen{
-     color: white;
-     text-align: center;
- }
- 
- .left p{
-     font-weight: 400;
- }
- 
- .right{
-     display: grid;
-     place-items: center;
- }
- 
- .right .screen{
-     color: black;
-     text-align: center;
- }
- 
- 
- .right form{
-     width: 500px;
- }
- 
- .screen{
-     margin-bottom: 30px;
- }
- 
- #name,
- #email,
- #number,
- #dropdown,
- #comments,
- textarea {
-     display: block;
-     width: 100%;
-     box-sizing: border-box;
-     border-radius: 80px;
-     border: 1px solid #c4c4c4;
-     padding: 1em;
-     margin-bottom: 1.25rem;
-     font-size: 0.875rem;
- }
- 
- #comments{
-     width: 100%;
-     padding: 8px 10px;
-     border-radius: 5px;
-     border: 1.2px solid #c4c4c4;
-     margin-top: 5px;
-     resize: none;
- }
- 
- .input-splitter{
-     display: grid;
-     grid-template-columns: repeat(2, minmax(0px, 1fr));
-     gap: 10px;
-     margin-bottom: 10px;
- }
- 
- .row{
-     display: flex;
-     flex-direction: column;
-     
- }
- 
- #submit {
-     display: block;
-     width: 100%;
-     background: #0096c7;
-     color: white;
-     font-weight: 700;
-     border: none;
-     padding: 1rem;
-     border-radius: 0.75rem;
-     text-transform: uppercase;
-     letter-spacing: 0.5px;
- }
- 
- #submit:hover {
-     background: #00b4d8;
-     cursor: pointer;
- }
- 
- @media  screen and (min-width: 900px) {
-     .split-screen {
-         flex-direction: row;
-         height: 100vh;
-     }
-     .left,
-     .right {
-         display: flex;
-         width: 50%;
-         height: auto;
-     }
- }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Miento &ndash; Survey Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="split-screen">
+    <div class="left">
+      <section class="screen">
+        <h1> Frame by Frame</h1>
+        <p>
+          “Cinema is not only about making people dream. <br> It's about changing things and making people think.”
+        </p>
+        <p> Movie Miento &reg;</p>
+      </section>
+    </div>
+    <div class="right">
+      <!-- 3. As a user, I want to see a form with id="". -->
+      <form action="" id="survey-form">
+        <section class="screen">
+          <!-- 10. For the name, email, and number input fields inside the form I can see corresponding labels that describe the purpose of each field with the following ids: id="name-label", id="email-label", and id="number-label". -->
+          <!-- 11. For the name, email, and number input fields, I want to see placeholder text that gives me a description or instructions for each field. -->
+          <!--  1. As a user, I want to see a title with id="title" in H1 sized text. -->
+          <h2 id="title">Survey Form</h2>
+          <!-- 2. As a user, I want to see a short explanation with id="description" in P sized text. -->
+          <p id="desciption">Thank you for joining us! Please take a moment to fill out this survey.</p>
+        </section>
+        <!-- 4. As a user, I want to be required to enter my name in a field with id="name".  -->
+        <div class="details">
+          <label for="name" id="name-label">Name</label>
+          <input id="name" type="text" required placeholder="Full Name" />
+        </div>
+        <!-- 5. As a user, I want to be required to enter an email in a field with id="email". -->
+        <!-- 6.  As a user, I want to see a validation error if I enter an email that is not formatted correctly. -->
+        <div class="details">
+          <label for="email" id="email-label">Email</label>
+          <input id="email" type="email" required placeholder="email@gmail.com" />
+        </div>
+
+        <!-- splitter -->
+        <div class="input-splitter">
+          <!-- 7.  As a user, I should be able to enter a number in a field with id="number". -->
+          <!-- 8. As a user, if I enter non-numbers in the number input, I want to see an HTML5 validation error. -->
+          <!-- 9. As a user, if I enter numbers outside the range of the number input, which are defined by the min and max attributes, I will see an HTML5 validation error. -->
+          <div class="details">
+            <label for="number" id="number-label">Rate the event from 1 to 10</label>
+            <input id="number" type="number" min="1" max="10" required placeholder="Enter your rate" />
+          </div>
+          <div class="details">
+            <!-- 12. Inside the form element, I want a select an option from a dropdown that has a corresponding id="dropdown". -->
+            <label for="dropdown"> Role </label>
+            <select name="instrument" id="dropdown" required>
+              <option value="" disabled selected hidden>Select your answer</option>
+              <option value="student">Student</option>
+              <option value="full-time-learner">Full time learner</option>
+              <option value="full-time-job">Full time job</option>
+              <option value="prefer-not-to-say">Prefer not to say</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="input-splitter">
+          <!-- 13. Inside the form element, I want to select a field from one or more groups of radio buttons. Each group should be grouped using the name attribute. -->
+          <div class="details">
+            <p>Would you recommend this event to a friend?</p>
+            <div class="row">
+              <label for="">
+                <input type="radio" name="willRecommend" value="yes" class="inputRadio">
+                Yes </label>
+              <label for="">
+                <input type="radio" name="willRecommend" value="no" class="inputRadio">
+                No </label>
+              <label for="">
+                <input type="radio" name="willRecommend" value="maybe" class="inputRadio">
+                Maybe </label>
+            </div>
+          </div>
+          <!-- 14. Inside the form element, I want to select several fields from a series of checkboxes, each of which must have a value attribute. -->
+          <div class="details">
+            <legend>What would you like to see improved?</legend>
+            <div>
+              <input type="checkbox" id="speaker" name="speaker" value="speaker" />
+              <label for="speaker">Speaker</label>
+            </div>
+            <div>
+              <input type="checkbox" id="place" name="place" value="place" />
+              <label for="place">Place</label>
+            </div>
+            <div>
+              <input type="checkbox" id="food" name="food" value="food" />
+              <label for="food">Food</label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <!--  I want to see a text-area at the end for additional comments. -->
+          <p id="user"> Any comment or suggestion?</p>
+          <textarea name="comment" rows="3" id="comments" required
+            placeholder="Enter your comment and suggestion here"></textarea>
+        </div>
+        <!--  I want to see a button with id="submit" to submit all my inputs. -->
+        <button id="submit" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
